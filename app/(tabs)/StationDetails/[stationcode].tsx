@@ -5,7 +5,7 @@ import { fetchVelibData } from '@/app/(tabs)/api/velibApi';  // Assure-toi d'uti
 
 const StationDetails: React.FC = () => {
   const { stationcode } = useLocalSearchParams();  // Récupère le paramètre stationcode depuis l'URL
-  const [station, setStation] = useState(null);
+  const [station, setStation] = useState(null); // Initialise la station à null
 
   // Récupère les données de la station en fonction du stationcode
   useEffect(() => {
