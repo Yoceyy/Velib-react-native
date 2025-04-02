@@ -3,13 +3,19 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { fetchVelibData } from '@/app/(tabs)/api/velibApi';
 
+
 const StationDetails: React.FC = () => {
+  // Récupération du paramètre de recherche
   const { stationcode } = useLocalSearchParams();
+  // Déclaration de l'état pour stocker les données de la station
   const [station, setStation] = useState(null);
 
+  // Fonction pour récupérer les données de la station
   useEffect(() => {
     const loadData = async () => {
+      // Appel de l'API pour récupérer les données
       const data = await fetchVelibData();
+      // Filtrage des données pour trouver la station correspondante
       const selectedStation = data.find((s) => s.stationcode === stationcode);
       setStation(selectedStation);
     };
