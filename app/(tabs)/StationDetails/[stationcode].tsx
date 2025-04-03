@@ -8,7 +8,20 @@ const StationDetails: React.FC = () => {
   // Récupération du paramètre de recherche
   const { stationcode } = useLocalSearchParams();
   // Déclaration de l'état pour stocker les données de la station
-  const [station, setStation] = useState(null);
+
+  // Type de données de la station
+  interface Station { // Declaration de l'interface 
+    stationcode: string;
+    name: string;
+    nom_arrondissement_communes: string;
+    numbikesavailable: number;
+    code_insee_commune: string;
+    numdocksavailable: number;
+    payment_terminal: boolean;
+    is_renting: boolean;
+  }
+
+  const [station, setStation] = useState<Station | null>(null);
 
   // Fonction pour récupérer les données de la station
   useEffect(() => {

@@ -7,7 +7,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#0072CE', // Bleu Vélib'
+        tabBarActiveTintColor: '#0fe954', 
         headerShown: false,
         tabBarStyle: Platform.select({
           ios: { position: 'absolute' },
@@ -22,10 +22,10 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="StationDetails/[stationcode]"
+        name="StationDetails/[stationcode]"  // Détails de la station
         options={{
           title: 'Informations', // Titre de l'onglet
-          tabBarIcon: ({ color }) => <Icon size={28} name="search-outline" color={color} />,
+          tabBarIcon: ({ color }) => <Icon size={28} name="search-outline" color={color} />, // Icône de l'onglet
         }}
       />
     </Tabs>
