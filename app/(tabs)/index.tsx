@@ -1,3 +1,16 @@
+/* ================================================================
+   ██╗   ██╗ ██████╗  ██████╗  ██████╗███████╗██╗   ██╗██╗   ██╗
+   ██║   ██║██╔═══██╗██╔════╝ ██╔════╝██╔════╝██║   ██║╚██╗ ██╔╝
+   ██║   ██║██║   ██║██║  ███╗██║     █████╗  ██║   ██║ ╚████╔╝ 
+   ╚██╗ ██╔╝██║   ██║██║   ██║██║     ██╔══╝  ██║   ██║  ╚██╔╝  
+    ╚████╔╝ ╚██████╔╝╚██████╔╝╚██████╗███████╗╚██████╔╝   ██║   
+     ╚═══╝   ╚═════╝  ╚═════╝  ╚═════╝╚══════╝ ╚═════╝    ╚═╝   
+           🔗 github.com/Yoceyy | 💻 By Yooceyy
+================================================================ */
+
+
+
+
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
@@ -11,7 +24,7 @@ const IndexScreen: React.FC = () => {
   const [searchText, setSearchText] = useState('');
   const router = useRouter();
 
-  useEffect(() => { // 🎯 Récupération des données Velib
+  useEffect(() => { //  Récupération des données Velib
     const loadData = async () => {
       const data = await fetchVelibData();
       setStations(data);
@@ -20,7 +33,7 @@ const IndexScreen: React.FC = () => {
     loadData();
   }, []);
 
-  // 🎯 Fonction de filtrage selon l'arrondissement, département ou "Autre"
+  //  Fonction de filtrage selon l'arrondissement, département ou "Autre"
   useEffect(() => {
     let filteredData = stations;
 
@@ -41,7 +54,7 @@ const IndexScreen: React.FC = () => {
       }
     }
 
-    // 🎯 Recherche par nom ou numéro de station
+    //  Recherche par nom ou numéro de station
     if (searchText) {
       filteredData = filteredData.filter(station =>
         station.name.toLowerCase().includes(searchText.toLowerCase()) ||
@@ -62,7 +75,7 @@ const IndexScreen: React.FC = () => {
         onValueChange={(itemValue) => setSelectedCategory(itemValue)}
         style={styles.picker}
       >
-        // 🎯 Options du Picker
+        // Options du Picker
         <Picker.Item label="Toutes les stations" value="Tout" />
         <Picker.Item label="Paris" value="Paris" />
         <Picker.Item label="Hors Paris" value="Hors Paris" />
@@ -102,7 +115,7 @@ const IndexScreen: React.FC = () => {
   );
 };
 
-//css 
+// css 
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20, backgroundColor: '#f5f5f5' },
