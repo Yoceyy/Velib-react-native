@@ -112,7 +112,12 @@ const IndexScreen: React.FC = () => {
             onPress={() => router.push(`/StationDetails/${item.stationcode}`)}
           >
             <Text style={styles.Time}>
-            
+              {new Date(item.duedate).toLocaleDateString("fr-FR", {
+                weekday: "long", // "lundi", "mardi", etc.
+                year: "numeric",
+                month: "long", // "avril", "mai", etc.
+                day: "numeric",
+              })}
             </Text>
             <Text style={styles.stationName}>{item.name}</Text>
             <Text>📍 Arrondissement: {item.nom_arrondissement_communes}</Text>
