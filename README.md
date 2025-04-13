@@ -1,49 +1,41 @@
-# Welcome to your Expo app 👋 (Bienvenue dans votre application Expo)
+Bienvenue dans l'application Expo 👋
 
-Ceci est un projet [Expo](https://expo.dev) créé avec [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Pour commencer
 
-## Démarrer
-
-1. Installer les dépendances
-
-   ```bash
+1. Installer les dépendances  
    npm install
-   ```
 
-2. Démarrer l'application
+2. Démarrer l'application  
+   npx expo start
 
-   ``bash
-    npx expo start
-   ```
+   Dans la sortie, vous trouverez des options pour ouvrir l'application dans :
+   - une version de développement : https://docs.expo.dev/develop/development-builds/introduction/
+   - un émulateur Android : https://docs.expo.dev/workflow/android-studio-emulator/
+   - un simulateur iOS : https://docs.expo.dev/workflow/ios-simulator/
+   - Expo Go : https://expo.dev/go (un bac à sable limité pour essayer le développement avec Expo)
 
-Dans la sortie, vous trouverez des options permettant d'ouvrir l'application dans un environnement de type
-
-- [build de développement](https://docs.expo.dev/develop/development-builds/introduction/)
-- [émulateur Android](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [simulateur iOS](https://docs.expo.dev/workflow/ios-simulator/)
-- Expo Go](https://expo.dev/go), un bac à sable limité pour essayer le développement d'applications avec Expo.
-
-Vous pouvez commencer à développer en éditant les fichiers du répertoire **app**. Ce projet utilise [file-based routing](https://docs.expo.dev/router/introduction).
+Vous pouvez commencer à développer en modifiant les fichiers dans le dossier "app".
+Ce projet utilise le routage basé sur les fichiers : https://docs.expo.dev/router/introduction
 
 ## Obtenir un nouveau projet
 
-Lorsque vous êtes prêt, lancez :
+Quand vous êtes prêt, exécutez :  
+   npm run reset-project
 
-``bash
-npm run reset-project
-```
-
-Cette commande déplacera le code de démarrage dans le répertoire **app-example** et créera un répertoire **app** vierge dans lequel vous pourrez commencer à développer.
+Cette commande déplacera le code de démarrage vers le dossier "app-example"
+et créera un dossier "app" vide dans lequel vous pourrez commencer à développer.
 
 ## En savoir plus
 
-Pour en savoir plus sur le développement de votre projet avec Expo, consultez les ressources suivantes :
+Pour en apprendre davantage sur le développement avec Expo, consultez :
 
-- [Documentation Expo] (https://docs.expo.dev/) : Apprenez les principes de base ou approfondissez les sujets avancés grâce à nos [guides](https://docs.expo.dev/guides).
-- Tutoriel d'apprentissage d'Expo](https://docs.expo.dev/tutorial/introduction/) : Suivez un tutoriel étape par étape qui vous permettra de créer un projet fonctionnant sur Android, iOS et le web.
+- Documentation Expo : https://docs.expo.dev/
+- Guides : https://docs.expo.dev/guides
+- Tutoriel étape par étape : https://docs.expo.dev/tutorial/introduction/
 
 ## Rejoindre la communauté
 
-J
+Rejoignez la communauté de développeurs créant des applications universelles :
 
-Traduit avec DeepL.com (version gratuite)
+- Expo sur GitHub : https://github.com/expo/expo
+- Communauté Discord : https://chat.expo.dev
