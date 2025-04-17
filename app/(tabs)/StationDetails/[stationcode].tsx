@@ -55,13 +55,13 @@ const StationDetails: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{station.name}</Text>
-      <Text>📍 Arrondissement: {station.nom_arrondissement_communes}</Text>
-      <Text>🏙️ Ville: {station.nom_arrondissement_communes}</Text>
-      <Text>🚲 Vélos dispos: {station.numbikesavailable}</Text>
-      <Text>🏘 Commune: {station.code_insee_commune}</Text>
-      <Text>🅿️ Attaches dispos: {station.numdocksavailable}</Text>
-      <Text>💳 Paiement: {station.payment_terminal ? 'Oui' : 'Non'}</Text>
-      <Text>Status: {station.is_renting ? '🟢 Ouvert' : '🔴 Fermé'}</Text>
+      <Text> Arrondissement: {station.nom_arrondissement_communes}</Text>
+      <Text> Ville: {station.nom_arrondissement_communes}</Text>
+      <Text> Vélos dispos: {station.numbikesavailable}</Text>
+      <Text> Commune: {station.code_insee_commune}</Text>
+      <Text> Attaches dispos: {station.numdocksavailable}</Text>
+      <Text> Paiement: {station.payment_terminal ? 'Oui' : 'Non'}</Text>
+      <Text>Status: {station.is_renting ? 'Ouvert' : 'Fermé'}</Text>
     </View>
   );
 };

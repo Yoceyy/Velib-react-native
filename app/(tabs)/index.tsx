@@ -79,7 +79,7 @@ const IndexScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>🚲 Stations Vélib' 🚲</Text>
+      <Text style={styles.title}> Stations Vélib' </Text>
 
       {/* Sélecteur d'arrondissement / catégorie */}
       <Picker
@@ -120,13 +120,13 @@ const IndexScreen: React.FC = () => {
               })}
             </Text>
             <Text style={styles.stationName}>{item.name}</Text>
-            <Text>📍 Arrondissement: {item.nom_arrondissement_communes}</Text>
-            <Text>🏙️ Ville: {item.nom_arrondissement_communes}</Text>
-            <Text>🚲 Vélos dispos: {item.numbikesavailable}</Text>
-            <Text>🏘 Commune: {item.code_insee_commune}</Text>
-            <Text>🅿️ Attaches dispos: {item.numdocksavailable}</Text>
-            <Text>💳 Paiement: {item.payment_terminal ? "Oui" : "Non"}</Text>
-            <Text>Status: {item.is_renting ? "🟢 Ouvert" : "🔴 Fermé"}</Text>
+            <Text> Arrondissement: {item.nom_arrondissement_communes}</Text>
+            <Text> Ville: {item.nom_arrondissement_communes}</Text>
+            <Text> Vélos dispos: {item.numbikesavailable}</Text>
+            <Text> Commune: {item.code_insee_commune}</Text>
+            <Text> Attaches dispos: {item.numdocksavailable}</Text>
+            <Text> Paiement: {item.payment_terminal ? "Oui" : "Non"}</Text>
+            <Text>Status: {item.is_renting ? "Ouvert" : "Fermé"}</Text>
           </TouchableOpacity>
         )}
       />
