@@ -1,26 +1,11 @@
-/* ================================================================
-$$\     $$\                                                           
-\$$\   $$  |                                                          
- \$$\ $$  /$$$$$$\   $$$$$$\   $$$$$$$\  $$$$$$\  $$\   $$\ $$\   $$\ 
-  \$$$$  /$$  __$$\ $$  __$$\ $$  _____|$$  __$$\ $$ |  $$ |$$ |  $$ |
-   \$$  / $$ /  $$ |$$ /  $$ |$$ /      $$$$$$$$ |$$ |  $$ |$$ |  $$ |
-    $$ |  $$ |  $$ |$$ |  $$ |$$ |      $$   ____|$$ |  $$ |$$ |  $$ |
-    $$ |  \$$$$$$  |\$$$$$$  |\$$$$$$$\ \$$$$$$$\ \$$$$$$$ |\$$$$$$$ |
-    \__|   \______/  \______/  \_______| \_______| \____$$ | \____$$ |
-                                                  $$\   $$ |$$\   $$ |
-                                                  \$$$$$$  |\$$$$$$  |
-                                                   \______/  \______/  
-           🔗 github.com/Yoceyy | 💻 By Yooceyy
-================================================================ */
-
 import axios from 'axios';
 
-// API URL for Vélib data
+// API URL Vélib en JSON
+const API_URL = 'https://opendata.paris.fr/api/records/1.0/search/?dataset=velib-disponibilite-en-temps-reel&rows=1000';
 
-const API_URL = 'https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/velib-disponibilite-en-temps-reel/records';
+// Interface des données d'une station Vélib
 
-
-// Declation de variables
+// Déclaration de l'interface pour les données de la station
 export interface VelibStation {
   stationcode: string;
   name: string;
@@ -35,15 +20,19 @@ export interface VelibStation {
   payment_terminal: boolean;
 }
 
-// Fetch Vélib data from the API
-
+// Fonction pour récupérer les données Vélib
 export const fetchVelibData = async (): Promise<VelibStation[]> => {
   try {
-    
+    // Appel de l'API pour récupérer les données
     const response = await axios.get(API_URL);
-    return response.data.results;
+    // Vérification de la réponse
+    const stations: VelibStation[] = response.data.records.map((record: any) => record.fields);
+
+    return stations;
   } catch (error) {
-    console.error('Erreur API Vélib :', error);
+    // Gestion des erreurs
+    // Affichage d'un message d'erreur dans la console
+    console.error('Erreur lors de la récupération des données Vélib :', error);
     return [];
   }
 };

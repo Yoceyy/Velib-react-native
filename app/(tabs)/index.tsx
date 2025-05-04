@@ -65,7 +65,7 @@ const IndexScreen: React.FC = () => {
       }
     }
 
-    //  Recherche par nom ou numéro de station
+    //  Recherche par nom de la station
     if (searchText) {
       filteredData = filteredData.filter(
         (station) =>
@@ -97,7 +97,7 @@ const IndexScreen: React.FC = () => {
       {/* Barre de recherche */}
       <TextInput
         style={styles.searchInput}
-        placeholder="Rechercher par nom ou numéro..."
+        placeholder="Rechercher par nom..."
         onChangeText={setSearchText}
         value={searchText}
       />
